@@ -1,2 +1,10 @@
 <app-header></app-header>
-<p>dashboard works!</p>
+
+<app-stop-button></app-stop-button>
+
+<div class="container">
+
+  <app-sounds-section *ngFor="let section of this.soundsLibraryService.soundSections"
+                      [section]="section"></app-sounds-section>
+
+</div>
