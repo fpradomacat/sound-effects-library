@@ -1,5 +1,4 @@
 //todo rename to SoundsSection
-import { Hotkey } from './Hotkey';
 import { Sound } from './Sound';
 
 export class Section {
