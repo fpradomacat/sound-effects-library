@@ -4,10 +4,7 @@
   @extend .clickable-box;
   @extend .flex-centered;
 
-  max-width: 70%;
-  min-height: 50px;
   padding: 1rem;
-  margin-bottom: 20px;
   border-radius: 3px;
   position: relative;
   background-color: var(--header--background-color);

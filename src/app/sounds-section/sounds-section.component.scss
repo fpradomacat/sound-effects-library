@@ -1,4 +1,4 @@
-.section-container {
+.sounds-section {
   margin-bottom: 20px;
   background-color: #eee;
   border-radius: 2px;
@@ -6,4 +6,13 @@
   -webkit-box-shadow: 0 1px 3px 0 rgba(85, 84, 89, .7);
   -moz-box-shadow: 0 1px 3px 0 rgba(85, 84, 89, .7);
   box-shadow: 0 1px 3px 0 rgba(85, 84, 89, .7);
+
+  .section-header {
+    margin-bottom: 0.5rem;
+  }
+  .sounds-container {
+    display: grid;
+    grid-gap: 0.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(107px, auto));
+  }
 }

@@ -15,8 +15,8 @@ export class SoundCardComponent {
   constructor(private soundPlayerService: SoundPlayerService) {
   }
 
-  public play(sound: Sound): void {
-    this.soundPlayerService.playSound(sound);
+  public play(): void {
+    this.soundPlayerService.playSound(this.sound);
   }
 
 }

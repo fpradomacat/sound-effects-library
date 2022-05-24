@@ -1,9 +1,9 @@
-<div class="row section-container">
-  <div class="col-12">
+<div class="sounds-section">
+  <div class="section-header">
     <h3>{{this.section.getName()}}</h3> <small>{{this.section.getDescription()}}</small>
   </div>
-  <div class="col-12 col-sm-6 col-md-4 col-xl-2"
-       *ngFor="let sound of this.section.getSounds()">
-    <app-sound-card [sound]="sound"></app-sound-card>
+  <div class="sounds-container">
+    <app-sound-card *ngFor="let sound of this.section.getSounds()"
+                    [sound]="sound"></app-sound-card>
   </div>
 </div>
