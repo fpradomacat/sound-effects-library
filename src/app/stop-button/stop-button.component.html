@@ -1,1 +1,7 @@
-<p>stop-button works!</p>
+<button (click)="stopCurrentSound()"
+        type="button"
+        class="stop-button"
+        [class.stop-button-active]="isStopButtonActive"
+>
+  <span>STOP</span>
+</button>

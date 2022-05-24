@@ -1,0 +1,52 @@
+.stop-button-active {
+  span {
+    transform: translate(4px, 4px);
+  }
+
+  box-shadow: inset 3px 3px 0 0 #8C2022 !important;
+}
+
+.stop-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 110px;
+  height: 35%;
+  word-break: break-all;
+  font-family: 'Press Start 2P', cursive;
+  background: #E76E55;
+  box-shadow: inset -4px -4px 0px 0px #8C2022;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &:active {
+    @extend .stop-button-active;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+  }
+
+  &:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+  }
+
+  &:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+  }
+}
