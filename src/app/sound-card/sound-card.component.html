@@ -1,1 +1,11 @@
-<p>sound-card works!</p>
+<div class="container">
+
+  <div class="button-container"
+       (click)="play(sound)">
+    <div class="play-button">PLAY</div>
+  </div>
+
+  <div class="text-container">
+    <span class="">{{sound.displayName}}</span>
+  </div>
+</div>
