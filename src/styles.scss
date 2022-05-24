@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Monoton|Press+Start+2P|Zilla+Slab+Highlight');
 
 * {
-  box-sizing: border-box;
-  font-family: 'Press Start 2P', cursive;
+  //box-sizing: border-box;
+}
 
-  // variables
+:root {
   --header--background-color: #00a3cc;
   --header--box-shadow-color: #007a99;
   --header--box-shadow-color-active: var(--header--box-shadow-color);
 
   --stop-button--background-color: #E76E55;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  padding: 4rem 4rem;
 }
 
 .row::after {

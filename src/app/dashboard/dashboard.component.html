@@ -1,8 +1,8 @@
-<app-header></app-header>
+<div class="dashboard">
 
-<app-stop-button></app-stop-button>
+  <app-header></app-header>
 
-<div class="container">
+  <app-stop-button></app-stop-button>
 
   <app-sounds-section *ngFor="let section of this.soundsLibraryService.soundSections"
                       [section]="section"></app-sounds-section>

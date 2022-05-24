@@ -5,8 +5,8 @@
   @extend .flex-centered;
 
   max-width: 70%;
-  min-height: 80px;
-  padding: 1.5rem;
+  min-height: 50px;
+  padding: 1rem;
   margin-bottom: 20px;
   border-radius: 3px;
   position: relative;
@@ -26,7 +26,7 @@
 
   span:first-child {
     font-size: 20px;
-    margin-right: 14px;
+    margin-right: 1rem;
     background-color: #fff;
     color: var(--header--background-color);
     padding: 0.5rem;
