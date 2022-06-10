@@ -1,10 +1,27 @@
 <div class="dashboard">
 
-  <app-header></app-header>
+  <!--  <app-header></app-header>-->
 
   <app-stop-button></app-stop-button>
 
-  <app-sounds-section *ngFor="let section of this.soundsLibraryService.soundSections"
-                      [section]="section"></app-sounds-section>
+  <input #searchInput
+         [(ngModel)]="searchText"
+         (focus)="isInputTextFocused = true"
+         (blur)="isInputTextFocused = false"
+         name="filter"
+         placeholder="Buscar..."
+         type="text"
+         autocomplete="off"
+         maxlength="20"
+  >
+
+  <ng-container *ngIf="searchText; else searchResults">
+    <app-sounds-section [section]="this.soundsLibraryService.searchSoundsByText(searchText)"></app-sounds-section>
+  </ng-container>
+
+  <ng-template #searchResults>
+    <app-sounds-section *ngFor="let section of this.soundsLibraryService.soundSections"
+                        [section]="section"></app-sounds-section>
+  </ng-template>
 
 </div>

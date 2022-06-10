@@ -15,4 +15,9 @@
     grid-gap: 0.25rem;
     grid-template-columns: repeat(auto-fill, minmax(107px, auto));
   }
+
+  .no-data-label {
+    font-size: x-small;
+    color: gray;
+  }
 }

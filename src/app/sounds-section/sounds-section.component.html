@@ -6,4 +6,9 @@
     <app-sound-card *ngFor="let sound of this.section.getSounds()"
                     [sound]="sound"></app-sound-card>
   </div>
+
+  <span *ngIf="this.section.getSounds().length === 0"
+        class="no-data-label">
+    No hay sonidos :(
+  </span>
 </div>

@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { Section } from "../classes/Section";
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SoundPlayerService } from "../sound-player.service";
 import { SoundsLibraryService } from "../sounds-library.service";
 import { Hotkey } from "../classes/Hotkey";
@@ -10,6 +9,11 @@ import { Hotkey } from "../classes/Hotkey";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  searchText: string = "";
+
+  @ViewChild('searchInput')
+  searchInput!: ElementRef;
+  isInputTextFocused: boolean = false;
 
   constructor(public soundsLibraryService: SoundsLibraryService,
               private soundPlayerService: SoundPlayerService) {
@@ -17,6 +21,8 @@ export class DashboardComponent {
 
   @HostListener('window:keydown', ['$event'])
   handleKeyPressed(event: KeyboardEvent) {
+    if (this.isInputTextFocused || this.searchText) return;
+
     if (event.shiftKey) {
       this.soundPlayerService.stopCurrentSound();
     } else {

@@ -21,8 +21,24 @@ export class SoundsLibraryService {
     return this.allSounds.find(x => x.isSameHotkey(hotkey));
   }
 
-  private get allSounds() {
+  searchSoundsByText(searchText: string): Section {
+    const sounds = this.getSoundsThatContainsText(searchText);
+
+    return new Section(`Resultados`, "", sounds);
+  }
+
+  private getSoundsThatContainsText(searchText: string) {
+    let containsSearchText = (x: Sound) => this.normalize(x.displayName).includes(this.normalize(searchText));
+    const filteredSounds = this.allSounds.filter(containsSearchText);
+    return filteredSounds;
+  }
+
+  private get allSounds(): Sound[] {
     return this.soundSections.flatMap(x => x.getSounds());
+  }
+
+  private normalize(str: string): string {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
 
 }
