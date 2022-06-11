@@ -3,6 +3,7 @@ import { SoundPlayer } from "./sound-player";
 import { Sound } from "./classes/Sound";
 import { Hotkey } from "./classes/Hotkey";
 import { SoundsLibraryService } from "./sounds-library.service";
+import { environment } from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,11 @@ export class SoundPlayerService extends SoundPlayer {
   }
 
   public playSound(sound: Sound): void {
-    this.audio.src = '/' + sound.source;
+    if (environment.production) {
+      this.audio.src = `https://fpradomacat.github.io/sound-effects-library/assets/audio/${sound.source}`;
+    } else {
+      this.audio.src = sound.source;
+    }
     this.play();
   }
 
