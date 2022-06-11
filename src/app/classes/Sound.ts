@@ -23,6 +23,14 @@ export class Sound {
     return `../../assets/audio/${this._source}.mp3`;
   }
 
+  get hotkeyToString() {
+    return `${this._hotkey.isCtrlPressed ? 'CTRL + ' : ''}${this._hotkey.key.toUpperCase()}`;
+  }
+
+  get hotkey() {
+    return this._hotkey;
+  }
+
   isSameHotkey(hotkey: Hotkey) {
     return this._hotkey.key === hotkey.key &&
       this._hotkey.isCtrlPressed === hotkey.isCtrlPressed;

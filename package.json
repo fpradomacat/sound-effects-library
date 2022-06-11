@@ -1,12 +1,13 @@
 {
   "name": "sound-effects-library",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --output-path docs --base-href /sound-effects-library/"
   },
   "private": true,
   "dependencies": {
